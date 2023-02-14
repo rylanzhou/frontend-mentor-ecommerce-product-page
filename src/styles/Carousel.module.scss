@@ -1,0 +1,50 @@
+@import './colors.scss';
+
+.Carousel {
+  position: relative;
+  height: 81dvw;
+  max-height: 486px;
+  width: 100dvw;
+  overflow: hidden;
+
+  .buttons {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.8rem;
+    transform: translateY(-50%);
+
+    span {
+      display: grid;
+      place-items: center;
+      width: 2.3rem;
+      aspect-ratio: 1;
+      background-color: $white;
+      border-radius: 50%;
+
+      img {
+        width: 0.6rem;
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    width: fit-content;
+    height: 100%;
+    list-style: none;
+    transition: transform 0.3s ease-out;
+
+    li {
+      position: relative;
+      width: 100dvw;
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+}

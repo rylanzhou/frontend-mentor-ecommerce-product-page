@@ -2,11 +2,12 @@
 
 .Header {
   position: fixed;
-  width: 100dvw;
+  z-index: 98;
   top: 0;
   display: flex;
   gap: 1rem;
   align-items: center;
+  width: 100dvw;
   padding: 1.4rem;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
   background-color: $white;
@@ -21,6 +22,7 @@
   inset: 0;
   visibility: hidden;
   opacity: 0;
+  z-index: 99;
   background-color: $light-box-background;
   transition: opacity 0.3s, visibility 0.3s;
 
