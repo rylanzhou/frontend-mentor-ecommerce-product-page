@@ -1,0 +1,14 @@
+.App {
+  min-height: 100dvh;
+  min-width: 375px;
+  overflow-x: hidden;
+
+  main {
+    padding-top: 4.3rem;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
