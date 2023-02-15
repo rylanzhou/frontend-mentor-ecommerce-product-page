@@ -1,3 +1,5 @@
+@import './colors.scss';
+
 .App {
   min-height: 100dvh;
   min-width: 375px;
@@ -9,6 +11,103 @@
 
     &::-webkit-scrollbar {
       display: none;
+    }
+
+    .detail {
+      padding: 1.4rem;
+
+      .company {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        font-weight: bold;
+        line-height: 2;
+        text-transform: uppercase;
+        color: $orange;
+      }
+
+      .title {
+        margin: 0.6rem 0 1.5rem;
+        font-size: 1.8rem;
+        line-height: 1;
+        text-transform: capitalize;
+        color: $black;
+      }
+
+      p {
+        line-height: 1.6;
+        font-size: 0.9rem;
+        color: $dark-gray;
+      }
+
+      .price {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.6rem 0 1rem;
+
+        .final {
+          font-size: 1.8rem;
+          color: $black;
+        }
+
+        .discount {
+          padding: 0.3rem 0.6rem;
+          border-radius: 6px;
+          font-weight: bold;
+          color: $orange;
+          background-color: $light-orange;
+        }
+
+        .origin {
+          margin-left: auto;
+          font-weight: bold;
+          text-decoration: line-through;
+          color: $gray;
+        }
+      }
+
+      .operations {
+        margin-top: 0.8rem;
+
+        .num-picker {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          height: 3.3rem;
+          padding: 0 1.4rem;
+          border-radius: 8px;
+          background-color: $light-gray;
+
+          span {
+            display: grid;
+            place-items: center;
+            height: 100%;
+
+            &.counter {
+              font-weight: bold;
+              color: $black;
+            }
+          }
+        }
+
+        .add-to-cart {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+          height: 3.3rem;
+          margin-top: 1rem;
+          border-radius: 8px;
+          font-weight: bold;
+          background-color: $orange;
+          box-shadow: 0 20px 20px rgb(255, 125, 26, 0.2);
+          color: $white;
+
+          img {
+            height: 1.1rem;
+          }
+        }
+      }
     }
   }
 }
