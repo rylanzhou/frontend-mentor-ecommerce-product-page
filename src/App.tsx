@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+
+import { ShoppingContext } from './ShoppingContext';
 
 import Carousel from './Components/Carousel';
 import Header from './Components/Header';
@@ -6,17 +8,26 @@ import { Cart, Minus, Plus } from './assets/icons';
 
 import styles from './styles/App.module.scss';
 
-const data = {
+const data: IMerchant = {
+  id: 1,
   company: 'Sneaker Company',
   title: 'Fall Limited Edition Sneakers',
   desc: "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.",
-  final: '$125.00',
-  discount: '50%',
-  origin: '$250.00',
+  final: 125,
+  discount: 50,
+  origin: 250,
+  thumbnail: './assets/image-product-1-thumbnail.jpg',
 };
 
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+});
+
 function App() {
-  const [counter, setCounter] = useState(0);
+  const { appendItem } = useContext(ShoppingContext) as IShoppingContext;
+
+  const [counter, setCounter] = useState(1);
 
   return (
     <div className={styles.App}>
@@ -31,14 +42,14 @@ function App() {
           <p>{data.desc}</p>
 
           <div className={styles.price}>
-            <h1 className={styles.final}>{data.final}</h1>
-            <span className={styles.discount}>{data.discount}</span>
-            <span className={styles.origin}>{data.origin}</span>
+            <h1 className={styles.final}>{formatter.format(data.final)}</h1>
+            <span className={styles.discount}>{data.discount}%</span>
+            <span className={styles.origin}>{formatter.format(data.origin)}</span>
           </div>
 
           <div className={styles.operations}>
             <div className={styles['num-picker']}>
-              <i onClick={() => setCounter((prev) => Math.max(0, prev - 1))}>
+              <i onClick={() => setCounter((prev) => Math.max(1, prev - 1))}>
                 <Minus />
               </i>
               <span className={styles.counter}>{counter}</span>
@@ -47,7 +58,7 @@ function App() {
               </i>
             </div>
 
-            <div className={styles['add-to-cart']}>
+            <div className={styles['add-to-cart']} onClick={() => appendItem(data, counter)}>
               <Cart fill="white" />
               <span>Add to cart</span>
             </div>

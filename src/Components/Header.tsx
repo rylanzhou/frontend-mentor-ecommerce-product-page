@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+
+import { ShoppingContext } from '../ShoppingContext';
 
 import { Cart, Close, Menu } from '../assets/icons';
 import { Avatar } from '../assets/images';
@@ -17,14 +19,17 @@ function MenuItems() {
 }
 
 export default function Header() {
+  const { items, totalAmount } = useContext(ShoppingContext) as IShoppingContext;
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   return (
     <>
       <header className={styles.Header}>
-        <Menu className={styles.menu} onClick={() => setMenuIsOpen(true)} />
+        <Menu onClick={() => setMenuIsOpen(true)} />
         <img src={Logo} alt="" />
-        <Cart className={styles.cart} />
+        <span className={styles['cart-btn']} aria-valuenow={totalAmount}>
+          <Cart className={styles.cart} />
+        </span>
         <img className={styles.avatar} src={Avatar} alt="" />
       </header>
 

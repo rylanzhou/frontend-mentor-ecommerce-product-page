@@ -16,8 +16,30 @@
     height: 1.5rem;
   }
 
-  .cart {
+  .cart-btn {
+    position: relative;
     margin-left: auto;
+    margin-right: 0.5rem;
+
+    .cart {
+      scale: 1.1;
+      vertical-align: middle;
+    }
+
+    &::after {
+      content: attr(aria-valuenow);
+      position: absolute;
+      top: -3px;
+      right: -5px;
+      padding: 0.05rem 0.4rem;
+      border-radius: 100px;
+      font-size: 0.6rem;
+      background-color: $orange;
+      color: $white;
+    }
+    // &[aria-valuenow='0']::after {
+    //   display: none;
+    // }
   }
 
   .cart,
