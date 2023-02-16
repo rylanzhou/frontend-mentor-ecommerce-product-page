@@ -15,6 +15,20 @@
   img.avatar {
     height: 1.5rem;
   }
+
+  .cart {
+    margin-left: auto;
+  }
+
+  .cart,
+  .menu {
+    fill: $dark-gray;
+    cursor: pointer;
+
+    &:hover {
+      fill: $black;
+    }
+  }
 }
 
 .mask {
@@ -51,6 +65,15 @@
 
   &[aria-hidden='false'] {
     transform: translateX(0);
+  }
+
+  .close {
+    fill: $dark-gray;
+    cursor: pointer;
+
+    &:hover {
+      fill: $orange;
+    }
   }
 
   ul {

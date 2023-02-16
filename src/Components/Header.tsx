@@ -22,9 +22,9 @@ export default function Header() {
   return (
     <>
       <header className={styles.Header}>
-        <img src={Menu} alt="" onClick={() => setMenuIsOpen(true)} />
+        <Menu className={styles.menu} onClick={() => setMenuIsOpen(true)} />
         <img src={Logo} alt="" />
-        <img src={Cart} alt="" style={{ marginLeft: 'auto' }} />
+        <Cart className={styles.cart} />
         <img className={styles.avatar} src={Avatar} alt="" />
       </header>
 
@@ -35,7 +35,7 @@ export default function Header() {
       ></div>
 
       <div className={styles['menu-drawer']} aria-hidden={!menuIsOpen}>
-        <img src={Close} alt="" onClick={() => setMenuIsOpen(false)} />
+        <Close className={styles.close} onClick={() => setMenuIsOpen(false)} />
         <MenuItems />
       </div>
     </>

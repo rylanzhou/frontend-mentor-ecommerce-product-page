@@ -16,6 +16,8 @@ const data = {
 };
 
 function App() {
+  const [counter, setCounter] = useState(0);
+
   return (
     <div className={styles.App}>
       <Header />
@@ -36,17 +38,17 @@ function App() {
 
           <div className={styles.operations}>
             <div className={styles['num-picker']}>
-              <span>
-                <img src={Minus} alt="" />
-              </span>
-              <span className={styles.counter}>{0}</span>
-              <span>
-                <img src={Plus} alt="" />
-              </span>
+              <i onClick={() => setCounter((prev) => Math.max(0, prev - 1))}>
+                <Minus />
+              </i>
+              <span className={styles.counter}>{counter}</span>
+              <i onClick={() => setCounter((prev) => prev + 1)}>
+                <Plus />
+              </i>
             </div>
 
             <div className={styles['add-to-cart']}>
-              <img src={Cart} alt="" />
+              <Cart fill="white" />
               <span>Add to cart</span>
             </div>
           </div>

@@ -25,11 +25,11 @@ export default function Carousel() {
     <div className={styles.Carousel}>
       <div className={styles.buttons}>
         <span onClick={() => getNextImageIndex(-1)}>
-          <img src={Previous} alt="" />
+          <Previous />
         </span>
 
         <span onClick={() => getNextImageIndex(1)}>
-          <img src={Next} alt="" />
+          <Next />
         </span>
       </div>
 

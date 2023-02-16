@@ -24,9 +24,15 @@
       aspect-ratio: 1;
       background-color: $white;
       border-radius: 50%;
+      cursor: pointer;
 
-      img {
-        width: 0.6rem;
+      svg {
+        scale: 0.7;
+        stroke: $black;
+      }
+
+      &:hover svg {
+        stroke: $orange;
       }
     }
   }
