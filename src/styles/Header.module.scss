@@ -110,3 +110,120 @@
     }
   }
 }
+
+.Basket {
+  position: fixed;
+  z-index: 98;
+  top: 4.9rem;
+  right: 7px;
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  min-height: 252px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: $white;
+  transform-origin: 80% 0;
+  scale: 0.5;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.15s ease-out;
+
+  &[aria-expanded='true'] {
+    scale: 1;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .header {
+    padding: 1.4rem;
+    border-bottom: 1px solid #eee;
+    font-weight: bold;
+    color: $black;
+  }
+
+  .content {
+    flex: 1;
+    position: relative;
+    padding: 0 1.4rem;
+
+    ul {
+      list-style: none;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1.4rem;
+        color: $dark-gray;
+
+        img {
+          width: 3rem;
+          height: 3rem;
+          border-radius: 6px;
+        }
+
+        .info {
+          flex: 1;
+        }
+
+        h4 {
+          font-weight: normal;
+
+          &.title {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+
+          &.price {
+            margin-top: 0.4rem;
+
+            strong {
+              margin-left: 0.6rem;
+              color: $black;
+            }
+          }
+        }
+
+        .remove {
+          fill: $gray;
+          cursor: pointer;
+
+          &:hover {
+            fill: $black;
+          }
+        }
+      }
+    }
+
+    .checkout {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      height: 3.3rem;
+      margin-top: 2rem;
+      border-radius: 8px;
+      font-weight: bold;
+      background-color: $orange;
+      box-shadow: 0 10px 10px rgb(255, 125, 26, 0.1);
+      color: $white;
+      transition: background-color 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $light-orange;
+      }
+    }
+
+    p {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-weight: bold;
+      color: $black;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

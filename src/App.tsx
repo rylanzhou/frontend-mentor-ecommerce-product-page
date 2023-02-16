@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 
-import { ShoppingContext } from './ShoppingContext';
+import { ShoppingContext, formatter } from './ShoppingContext';
 
 import Carousel from './Components/Carousel';
 import Header from './Components/Header';
@@ -16,13 +16,8 @@ const data: IMerchant = {
   final: 125,
   discount: 50,
   origin: 250,
-  thumbnail: './assets/image-product-1-thumbnail.jpg',
+  thumbnail: '/src/assets/image-product-1-thumbnail.jpg',
 };
-
-const formatter = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD',
-});
 
 function App() {
   const { appendItem } = useContext(ShoppingContext) as IShoppingContext;
