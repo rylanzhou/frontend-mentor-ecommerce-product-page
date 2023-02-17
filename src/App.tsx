@@ -5,7 +5,9 @@ import { ShoppingContext, formatter } from './ShoppingContext';
 import Carousel from './Components/Carousel';
 import Header from './Components/Header';
 import { Cart, Minus, Plus } from './assets/icons';
+import { productImageWithThumbnails, productImages } from './assets/images';
 
+import LightBox from './Components/LightBox';
 import styles from './styles/App.module.scss';
 
 const data: IMerchant = {
@@ -29,7 +31,8 @@ function App() {
       <Header />
 
       <main>
-        <Carousel />
+        <Carousel images={productImages} />
+        <LightBox images={productImageWithThumbnails} />
 
         <section className={styles.detail}>
           <h3 className={styles.company}>{data.company}</h3>

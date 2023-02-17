@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
 
 import { Next, Previous } from '../assets/icons';
-import { productImages } from '../assets/images';
 
 import styles from '../styles/Carousel.module.scss';
 
-export default function Carousel() {
+export default function Carousel({ images }: { images: string[] }) {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   const getNextImageIndex = (increment: number) => {
     setActiveImageIndex((prev) => {
       let next = prev + increment;
-      if (next >= productImages.length) {
+      if (next >= images.length) {
         next = 0;
       } else if (next < 0) {
-        next = productImages.length - 1;
+        next = images.length - 1;
       }
 
       return next;
@@ -34,7 +33,7 @@ export default function Carousel() {
       </div>
 
       <ul style={{ transform: `translateX(calc(min(50rem, 100dvw) * -${activeImageIndex}))` }}>
-        {productImages.map((each) => (
+        {images.map((each) => (
           <li key={each} style={{ backgroundImage: `url('${each}')` }}></li>
         ))}
       </ul>

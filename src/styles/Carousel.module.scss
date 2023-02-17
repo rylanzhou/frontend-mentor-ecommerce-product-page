@@ -2,10 +2,8 @@
 
 .Carousel {
   position: relative;
-  height: 80dvw;
-  max-height: 486px;
-  max-width: 50rem;
-  width: 100%;
+  height: clamp(300px, 80dvw, 486px);
+  width: clamp(375px, 100%, 50rem);
   margin: 0 auto;
   overflow: hidden;
 
@@ -50,10 +48,15 @@
       position: relative;
       width: 100dvw;
       max-width: 50rem;
+      min-width: 375px;
       height: 100%;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center top;
     }
+  }
+
+  @media screen and (min-width: 768px) {
+    display: none;
   }
 }

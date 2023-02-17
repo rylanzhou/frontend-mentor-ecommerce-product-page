@@ -12,4 +12,9 @@ import Product2Thumb from './image-product-2-thumbnail.jpg';
 import Product3Thumb from './image-product-3-thumbnail.jpg';
 import Product4Thumb from './image-product-4-thumbnail.jpg';
 
-export const productThumbnails = [Product1Thumb, Product2Thumb, Product3Thumb, Product4Thumb];
+export const productImageWithThumbnails = [
+  { origin: Product1, thumb: Product1Thumb },
+  { origin: Product2, thumb: Product2Thumb },
+  { origin: Product3, thumb: Product3Thumb },
+  { origin: Product4, thumb: Product4Thumb },
+];
