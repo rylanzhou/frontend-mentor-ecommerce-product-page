@@ -4,7 +4,9 @@
   position: relative;
   height: 80dvw;
   max-height: 486px;
-  width: 100dvw;
+  max-width: 50rem;
+  width: 100%;
+  margin: 0 auto;
   overflow: hidden;
 
   .buttons {
@@ -47,10 +49,11 @@
     li {
       position: relative;
       width: 100dvw;
+      max-width: 50rem;
       height: 100%;
       background-size: cover;
       background-repeat: no-repeat;
-      background-position: center center;
+      background-position: center top;
     }
   }
 }

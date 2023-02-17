@@ -1,25 +1,64 @@
 @import './colors.scss';
 
 .Header {
-  position: fixed;
+  position: sticky;
   z-index: 98;
   top: 0;
   display: flex;
   gap: 1rem;
   align-items: center;
-  width: 100dvw;
+  width: 100%;
   padding: 1.4rem;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid $gray;
   background-color: $white;
+
+  .menu-items {
+    display: none;
+    margin-left: 2rem;
+    gap: clamp(1rem, 3dvw, 2rem);
+    list-style: none;
+    text-transform: capitalize;
+    color: $dark-gray;
+
+    li {
+      position: relative;
+      cursor: pointer;
+
+      &:hover {
+        color: $black;
+
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: calc(-3rem + 2px);
+        left: 0;
+        width: 0;
+        height: 4px;
+        background-color: $orange;
+        transition: width 0.3s ease;
+      }
+    }
+  }
 
   img.avatar {
     height: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+      outline: 2px solid $orange;
+    }
   }
 
   .cart-btn {
     position: relative;
     margin-left: auto;
-    margin-right: 0.5rem;
+    margin-right: clamp(0.5rem, 2dvw, 2rem);
 
     .cart {
       scale: 1.1;
@@ -37,9 +76,10 @@
       background-color: $orange;
       color: $white;
     }
-    // &[aria-valuenow='0']::after {
-    //   display: none;
-    // }
+
+    &[aria-valuenow='0']::after {
+      display: none;
+    }
   }
 
   .cart,
@@ -98,7 +138,7 @@
     }
   }
 
-  ul {
+  .menu-items {
     margin-top: 3rem;
     list-style: none;
 
@@ -123,6 +163,7 @@
   border-radius: 8px;
   overflow: hidden;
   background-color: $white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   transform-origin: 80% 0;
   scale: 0.5;
   visibility: hidden;
@@ -225,5 +266,28 @@
       color: $black;
       transform: translate(-50%, -50%);
     }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Header {
+    height: 7rem;
+
+    .menu {
+      display: none;
+    }
+
+    .menu-items {
+      display: flex;
+    }
+
+    img.avatar {
+      height: 3rem;
+    }
+  }
+
+  .mask,
+  .menu-drawer {
+    display: none;
   }
 }

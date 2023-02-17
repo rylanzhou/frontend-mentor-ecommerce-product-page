@@ -11,7 +11,7 @@ import Basket from './Basket';
 
 function MenuItems() {
   return (
-    <ul>
+    <ul className={styles['menu-items']}>
       {['collections', 'men', 'women', 'about', 'contact'].map((each) => (
         <li key={each}>{each}</li>
       ))}
@@ -27,8 +27,9 @@ export default function Header() {
   return (
     <>
       <header className={styles.Header}>
-        <Menu onClick={() => setMenuIsOpen(true)} />
+        <Menu className={styles.menu} onClick={() => setMenuIsOpen(true)} />
         <img src={Logo} alt="" />
+        <MenuItems />
         <span
           className={styles['cart-btn']}
           aria-valuenow={totalAmount}

@@ -29,7 +29,6 @@ export default function ShoppingProvider({ children }: React.PropsWithChildren) 
 
   const removeItem = (id: number) => {
     const targetIndex = items.findIndex((each) => each.id === id);
-    console.log(items[targetIndex].amount);
 
     setItems((prev) => {
       if (prev[targetIndex].amount > 1) {
