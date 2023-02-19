@@ -1,6 +1,4 @@
-# Frontend Mentor - Multi-step form solution
-
-This is a solution to the [Multi-step form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+# Frontend Mentor - E-commerce product page
 
 ## Table of contents
 
@@ -18,10 +16,12 @@ This is a solution to the [Multi-step form challenge on Frontend Mentor](https:/
 
 Users should be able to:
 
-- [x] Complete each step of the sequence
-- [x] See a summary of their selections on the final step and confirm their order
-- [x] View the optimal layout for the interface depending on their device's screen size
-- [x] See hover and focus states for all interactive elements on the page
+- [x] View the optimal layout for the site depending on their device's screen size
+- [x] See hover states for all interactive elements on the page
+- [x] Open a lightbox gallery by clicking on the large product image
+- [x] Switch the large product image by clicking on the small thumbnail images
+- [x] Add items to the cart
+- [x] View the cart and remove items from it
 
 ### Screenshot
 
@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github](https://github.com/RylanZhou/frontend-mentor-multi-step-form)
-- Live Site URL: [Vercel](https://frontend-mentor-multi-step-form-nu.vercel.app/)
+- Solution URL: [Github](https://github.com/rylanzhou/frontend-mentor-ecommerce-product-page)
+- Live Site URL: [Vercel](https://frontend-mentor-ecommerce-product-page-woad.vercel.app/)
 
 ## My process
 
@@ -42,18 +42,13 @@ Users should be able to:
 
 - Semantic HTML5 markup
 - Scss
-- Flexbox
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- React Context Hook
 - TypeScript
+- Vite
 
 ### What I implemented
 
-1. Use the recently released css unit `dvw` and `dvh` to set the width and height to automatically make the element fit in any viewport size.
+1. Use `ref` on `<Header>` component and `window.onresize` to determine the position of basket popup when in large screens.
 
-2. Use `createContext` and `useContext()` hook to store and access state in different forms and to control current step.
-
-3. For customized checkbox/switch, use a hidden `<input>` element to control the value, then create the visual checkbox/switch by styling a `<span>` or a `<label>` element.
-
-4. It is a good idea to use `React.lazy` to render different forms until they are needed. Together with `lazy`, should use `<Suspend fallback={MyComponent}>` to handle when the actual component is being loaded.
+2. Use `vite-plugin-svgr` lib to directly import SVGs as components. Remove the `fill` property in each SVG file beforehand so that the color can be adjusted with CSS.
