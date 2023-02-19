@@ -82,27 +82,27 @@
           border-radius: 8px;
           background-color: $light-gray;
 
-          span,
+          .counter {
+            font-weight: bold;
+            color: $black;
+          }
+
           i {
             display: grid;
             place-items: center;
             height: 100%;
             padding: 0 1.4rem;
+
             svg {
               fill: $orange;
             }
 
-            &.counter {
-              font-weight: bold;
-              color: $black;
-            }
-          }
+            &:hover {
+              cursor: pointer;
 
-          i:hover {
-            cursor: pointer;
-
-            svg {
-              fill: $light-orange;
+              svg {
+                fill: $light-orange;
+              }
             }
           }
         }
@@ -173,8 +173,17 @@
       }
     }
 
-    @media screen and (min-width: 800px) {
-      padding-top: max(2rem, 3dvw);
+    @media screen and (min-width: 768px) {
+      padding-top: max(2rem, 6dvw);
+    }
+
+    @media screen and (min-width: 1024px) {
+      display: flex;
+      justify-content: space-around;
+
+      .detail {
+        margin: 0;
+      }
     }
   }
 }

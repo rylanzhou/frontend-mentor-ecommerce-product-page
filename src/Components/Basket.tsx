@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { CSSProperties, useContext } from 'react';
 
 import { ShoppingContext, formatter } from '../ShoppingContext';
 
@@ -6,11 +6,15 @@ import { Delete } from '../assets/icons';
 
 import styles from '../styles/Header.module.scss';
 
-export default function Basket({ visible }: { visible: boolean }) {
+export default function Basket({ visible, anchor }: { visible: boolean; anchor: string }) {
   const { items, removeItem } = useContext(ShoppingContext) as IShoppingContext;
 
   return (
-    <div className={styles.Basket} aria-expanded={visible}>
+    <div
+      className={styles.Basket}
+      aria-expanded={visible}
+      style={{ '--left': anchor } as CSSProperties}
+    >
       <div className={styles.header}>Cart</div>
 
       <div className={styles.content}>

@@ -32,7 +32,11 @@ export default function Carousel({ images }: { images: string[] }) {
         </span>
       </div>
 
-      <ul style={{ transform: `translateX(calc(min(50rem, 100dvw) * -${activeImageIndex}))` }}>
+      <ul
+        style={{
+          transform: `translateX(calc(clamp(375px, 100dvw, 50rem) * -${activeImageIndex}))`,
+        }}
+      >
         {images.map((each) => (
           <li key={each} style={{ backgroundImage: `url('${each}')` }}></li>
         ))}

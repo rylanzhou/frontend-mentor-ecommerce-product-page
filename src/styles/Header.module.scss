@@ -290,4 +290,15 @@
   .menu-drawer {
     display: none;
   }
+
+  .Basket {
+    top: 5.5rem;
+  }
+}
+
+@media screen and (min-width: 1268px) {
+  .Basket {
+    right: unset;
+    left: calc(var(--left) - 20rem);
+  }
 }
