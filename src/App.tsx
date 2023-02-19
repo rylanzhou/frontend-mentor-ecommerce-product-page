@@ -18,7 +18,7 @@ const data: IMerchant = {
   final: 125,
   discount: 50,
   origin: 250,
-  thumbnail: '/src/assets/image-product-1-thumbnail.jpg',
+  thumbnail: '/thumbnail.jpg',
 };
 
 function App() {
